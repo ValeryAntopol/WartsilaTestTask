@@ -1,6 +1,5 @@
 #include "RequestProcessor.h"
 
-#include <cassert>
 #include <chrono>
 #include <iostream>
 

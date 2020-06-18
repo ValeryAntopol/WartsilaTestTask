@@ -2,8 +2,6 @@
 
 #include "StopperImpl.h"
 
-#include <cstdint>
-
 class Request {
 public:
   ~Request();
