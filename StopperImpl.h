@@ -1,5 +1,6 @@
 #pragma once
 
+#include <atomic>
 #include <mutex>
 
 class StopperImpl {
@@ -11,8 +12,7 @@ public:
   void reset();
 
 private:
-  bool controlVariable;
-  std::mutex mutex;
+  std::atomic<bool> controlVariable;
 };
 
 using Stopper = std::reference_wrapper<StopperImpl>;
