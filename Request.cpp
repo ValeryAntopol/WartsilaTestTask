@@ -50,9 +50,8 @@ Request* GetRequest(Stopper stopSignal) {
 void ProcessRequest(Request* request, Stopper stopSignal) {
   if (stopSignal.get().isStopped()) {
     return;
-  } {
-    std::this_thread::sleep_for(PROCESS_REQUEST_DURATION);
-    registerProcessRequest(request);
-    return;
   }
+
+  std::this_thread::sleep_for(PROCESS_REQUEST_DURATION);
+  registerProcessRequest(request);
 }
